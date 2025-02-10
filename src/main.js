@@ -1,5 +1,6 @@
 import './style.css'
 import { loginServer } from './login.js'
+import { fetchProtectedData } from './protected.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -11,7 +12,13 @@ document.querySelector('#app').innerHTML = `
       <input type="password" id="password" name="password">
       <button id="login-button">Login</button>
     </div>
+
+    <hr style="margin: 20px 0;">
+
+    <h1>Protected Area</h1>
+    <button id="check-button" type="button">Check Auth</button>
   </div>
 `
 
 loginServer(document.querySelector('#login-button'))
+fetchProtectedData(document.querySelector('#check-button'))
